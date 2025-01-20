@@ -74,7 +74,7 @@ async function main() {
   if (comments && comments.length > 0) {
     await analyzeAndReply(comments);
   } else {
-    console.log("Noo new comments found.");
+    console.log("No new comments found.");
   }
 }
 
