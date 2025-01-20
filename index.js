@@ -1,3 +1,4 @@
+
 import "dotenv/config";
 import fetch from "node-fetch";
 import { Facebook } from "facebook-sdk";
@@ -78,4 +79,7 @@ async function main() {
   }
 }
 
-main();
+setInterval(() => {
+  main();
+}, 1000);
+
