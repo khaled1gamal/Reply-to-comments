@@ -1,0 +1,18 @@
+{
+  "name": "reply-to-comments",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "facebook-sdk": "^0.3.3",
+    "node-fetch": "^3.3.2"
+  }
+}
