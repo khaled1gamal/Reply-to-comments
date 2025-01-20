@@ -9,6 +9,9 @@
   },
   "keywords": [],
   "author": "",
+  "engines": {
+    "node": "22.11.0"
+  },
   "license": "ISC",
   "description": "",
   "dependencies": {
