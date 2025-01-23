@@ -97,7 +97,7 @@ const app = express();
 app.use(express.json());
 
 // التحقق من إعداد Webhook
-app.get("/webhook", (req, res) => {
+app.get("/webhooks", (req, res) => {
   const mode = req.query["hub.mode"];
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
@@ -111,7 +111,7 @@ app.get("/webhook", (req, res) => {
 });
 
 // معالجة الإشعارات الواردة من Facebook
-app.post("/webhook", async (req, res) => {
+app.post("/webhooks", async (req, res) => {
   const body = req.body;
 
   // التحقق من أن الإشعار خاص بالصفحة
