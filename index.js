@@ -157,3 +157,4 @@ app.listen(PORT, () => {
   console.log(`Webhook server is running on port ${PORT}`);
 });
 
+export default app;
