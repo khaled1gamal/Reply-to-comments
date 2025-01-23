@@ -102,7 +102,7 @@ app.get("/webhooks", (req, res) => {
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
 
-  if (mode && "reply_to_comments_938271" === VERIFY_TOKEN) {
+  if (mode && token === VERIFY_TOKEN) {
     console.log("Webhook verified!");
     res.status(200).send(challenge);
   } else {
