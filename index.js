@@ -106,7 +106,7 @@ app.get("/webhooks", (req, res) => {
     console.log("Webhook verified!");
     res.status(200).send(challenge);
   } else {
-    res.status(403).send("Verification failed");
+    res.status(403).send("Verification faileddd!");
   }
 });
 
