@@ -102,11 +102,12 @@ app.get("/webhooks", (req, res) => {
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
 
-  if (mode && token === VERIFY_TOKEN) {
-    console.log("Webhook verified!");
-    res.status(200).send(challenge);
+  if (mode === "subscribe" && token === VERIFY_TOKEN) {
+    console.log("Webhook verified successfully!");
+    res.status(200).send(challenge); // إرسال قيمة التحدي للتحقق
   } else {
-    res.status(403).send("Verification failed!");
+    console.error("Verification failed. Token mismatch or invalid mode.");
+    res.status(403).send("Verification failed"); // إذا لم يتطابق الرمز
   }
 });
 
