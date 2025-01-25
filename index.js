@@ -51,8 +51,15 @@ app.post("/webhooks", async (req, res) => {
             continue;
           }
 
+            // تقسيم الاسم الكامل إلى الاسم الأول والأخير
+            const [firstName, ...lastNameParts] = commenterName.split(" ");
+            const lastName = lastNameParts.join(" ");
+
           // الرد على التعليق
-          const replyMessage = "شكراً لتفاعلك معنا!";
+          const replyMessage = `
+                  شكراً لك يا ${firstName} ${lastName} على تفاعلك معنا!
+                  سيقوم احد مسؤلي المابيعات بالرد عليكم.
+              `;
           try {
             await fetch(`${graphUrl}/${commentId}/comments`, {
               method: "POST",
