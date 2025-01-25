@@ -42,6 +42,8 @@ app.post("/webhooks", async (req, res) => {
         ) {
           const commentId = change.value.comment_id;
           const commentMessage = change.value.message || "";
+          const commenterId = change.value.from.id;
+          const commenterName = change.value.from.name;
 
           console.log(`New comment received: ${commentMessage}`);
 
