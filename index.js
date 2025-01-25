@@ -48,7 +48,7 @@ app.post("/webhooks", async (req, res) => {
           console.log(`New comment received: ${commentMessage}`);
 
           // التحقق من أن التعليق ليس من الصفحة نفسها
-          if (commenterId === (process.env.PAGE_ID+commentId)) {
+          if (commenterId === (process.env.PAGE_ID)) {
             console.log(`Skipping comment ${commentId} from the page itself.`);
             continue;
           }
