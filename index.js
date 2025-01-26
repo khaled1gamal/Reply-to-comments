@@ -48,20 +48,18 @@ app.post("/webhooks", async (req, res) => {
           console.log(`New comment received: ${commentMessage}`);
 
           // التحقق من أن التعليق ليس من الصفحة نفسها
-          if (commenterId === (process.env.PAGE_ID)) {
+          if (commenterId === process.env.PAGE_ID) {
             console.log(`Skipping comment ${commentId} from the page itself.`);
             continue;
           }
 
-            // تقسيم الاسم الكامل إلى الاسم الأول والأخير
-            const [firstName, ...lastNameParts] = commenterName.split(" ");
-            const lastName = lastNameParts.join(" ");
-
+          // تقسيم الاسم الكامل إلى الاسم الأول والأخير
+          const [firstName, ...lastNameParts] = commenterName.split(" ");
+          const lastName = lastNameParts.join(" ");
           // الرد على التعليق
           const replyMessage = `
-                  شكراً لك يا ${firstName} ${lastName} على تفاعلك معنا!
-                  سيقوم احد مسؤلي المابيعات بالرد عليكم.
-              `;
+            شكراً لك يا ${firstName} ${lastName} على تفاعلك معنا! سيقوم احد مسؤلي المابيعات بالرد عليكم          
+          `;
           try {
             await fetch(`${graphUrl}/${commentId}/comments`, {
               method: "POST",
