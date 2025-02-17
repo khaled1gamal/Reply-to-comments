@@ -56,14 +56,17 @@ app.post("/webhooks", async (req, res) => {
           // تقسيم الاسم الكامل إلى الاسم الأول والأخير
           const [firstName, ...lastNameParts] = commenterName.split(" ");
           const lastName = lastNameParts.join(" ");
-          //تنسيق اللوان الرد على التعليق
+          // تنسيق ألوان الرد على التعليق
           const replyColor = "blue";
           const replyBackgroundColor = "lightblue";
           const replyStyle = `color: ${replyColor}; background-color: ${replyBackgroundColor}; padding: 5px; border-radius: 5px;`;
-          firstNameAndLastName = `<span style="${replyStyle}">${firstName} ${lastName}</span>`;
+
+          // عرض اسم المستخدم بشكل منسق
+          const formattedName = `<span style="${replyStyle}">${firstName} ${lastName}</span>`;
+
           // الرد على التعليق
           const replyMessage = `
-            شكراً لك يا ${firstNameAndLastName} على تفاعلك معنا! سيقوم احد مسؤلي المابيعات بالرد عليكم          
+            شكراً لك يا ${formattedName} على تفاعلك معنا! سيقوم أحد مسؤولي المبيعات بالرد عليكم.
           `;
           try {
             await fetch(`${graphUrl}/${commentId}/comments`, {
