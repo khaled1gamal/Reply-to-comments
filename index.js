@@ -63,7 +63,6 @@ app.post("/webhooks", async (req, res) => {
 
           // عرض اسم المستخدم بشكل منسق
           let formattedName = `${firstName} ${lastName}`;
-          formattedName = `<span style="${replyStyle}">${formattedName}</span>`;
           // الرد على التعليق
           const replyMessage = `
             شكراً لك يا ${formattedName} على تفاعلك معنا! سيقوم أحد مسؤولي المبيعات بالرد عليكم.
