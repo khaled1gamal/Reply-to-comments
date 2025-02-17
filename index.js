@@ -62,7 +62,7 @@ app.post("/webhooks", async (req, res) => {
           const replyStyle = `color: ${replyColor}; background-color: ${replyBackgroundColor}; padding: 5px; border-radius: 5px;`;
 
           // عرض اسم المستخدم بشكل منسق
-          const formattedName = `@${firstName} ${lastName}`;
+          const formattedName = `${firstName} ${lastName}`;
 
           // الرد على التعليق
           const replyMessage = `
