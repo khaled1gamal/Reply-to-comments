@@ -7,6 +7,7 @@ const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN || "reply_to_comments_938271";
 const graphUrl = "https://graph.facebook.com/v21.0";
 
+
 // إعداد الخادم باستخدام Express
 const app = express();
 app.use(express.json());
