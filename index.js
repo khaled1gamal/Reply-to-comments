@@ -66,7 +66,7 @@ app.post("/webhooks", async (req, res) => {
           let formattedName = `${firstName} ${lastName}`;
           // الرد على التعليق
           const replyMessage = `
-            شكراً لك يا ${formattedName} على تفاعلك معنا! سيقوم أحد مسؤولي المبيعات بالرد عليكم.
+            شكراً لك يا ${formattedName} على تفاعلك معنا! سيقوم أحد مسؤولي التواصل معكم من خلال رسائل الصفحه.
           `;
           try {
             await fetch(`${graphUrl}/${commentId}/comments`, {
